@@ -1,9 +1,6 @@
 package com.azhen.example1;
 
-import org.quartz.Job;
-import org.quartz.JobDataMap;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
+import org.quartz.*;
 
 public class HelloJob implements Job {
     public HelloJob() {
@@ -12,6 +9,6 @@ public class HelloJob implements Job {
     @Override
     public void execute(JobExecutionContext context)
             throws JobExecutionException {
-        System.out.println("Hello");
+        System.err.println("Hello!  HelloJob is executing.");
     }
 }

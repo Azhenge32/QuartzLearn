@@ -14,17 +14,16 @@ public class QuartzTest {
     public static void main(String[] args) {
         try {
             Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
-
             scheduler.start();
             JobDetail job = newJob(HelloJob.class)
-                    .withIdentity("job1", "group1")
+                    .withIdentity("myJob", "group1")
                     .build();
 
             Trigger trigger = newTrigger()
-                    .withIdentity("trigger1", "group1")
+                    .withIdentity("myTrigger", "group1")
                     .startNow()
                     .withSchedule(simpleSchedule()
-                            .withIntervalInSeconds(40)
+                            .withIntervalInSeconds(1)
                             .repeatForever())
                     .build();
 
