@@ -1,4 +1,4 @@
-package com.azhen.example1;
+package com.azhen.lesson1;
 
 import org.quartz.*;
 
